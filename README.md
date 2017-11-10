@@ -16,4 +16,4 @@ The develop branch serves as an integration branch for features. Individual deve
 
 **Currently Active Branches** ([can be viewed here](https://github.com/SWRRoboticsTeam/Practice/branches))
 
-NVERTUCCI-TerminatorBot (Mr.V's Test Code for TerminatorBot)
+1. NVERTUCCI-TerminatorBot (Mr.V's Test Code for TerminatorBot)
