@@ -10,6 +10,9 @@
 // Select Download method as "competition"
 #pragma competitionControl(Competition)
 
+#pragma autonomousDuration(20)
+#pragma userControlDuration(120)
+
 //Main competition background code...do not modify!
 #include "Vex_Competition_Includes.c"
 
