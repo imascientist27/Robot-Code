@@ -1,6 +1,6 @@
 /*---------------------------------------------------------------------------*/
 /*                                                                           */
-/*        Description: Competition template for VEX EDR                      */
+/*        Description: SWRRobotics Competition Code for VEX EDR              */
 /*                                                                           */
 /*---------------------------------------------------------------------------*/
 
