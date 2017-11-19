@@ -15,6 +15,3 @@ The master branch stores the official release history tied to a version. Pull re
 The develop branch serves as an integration branch for features. Individual developer code should be branched from master but always pushed to develop. Branches should follow the naming convention {FirstInitial}{LastName}-{Feature#/name} (Ex. NVERTUCCI-Feature1 or NVERTUCCI-TerminatorBot).
 
 **Currently Active Branches** ([can be viewed here](https://github.com/SWRRoboticsTeam/Robot-Code/branches))
-
-1. NVERTUCCI-TerminatorBot
-2. AMCCARTHY-ClawBot
