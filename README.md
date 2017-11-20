@@ -1,4 +1,4 @@
-**CURRENT CODE VERSION:** [![SWRRobotics Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/SWRRoboticsTeam/Practice/blob/master/CHANGELOG.md)
+**CURRENT CODE VERSION:** [![SWRRobotics Version](https://img.shields.io/badge/code-version-0.1.0-blue.svg)](https://github.com/SWRRoboticsTeam/Practice/blob/master/CHANGELOG.md)
 
 # SWRRobotics Team Repository (49627A)
 This repository is dedicated to the development of the Shoreham-Wading River Robotics Team RobotC code.
