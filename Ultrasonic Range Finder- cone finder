@@ -29,7 +29,7 @@ task main()
     sonarpre = sonar_value;
     sonar_value = SensorValue(sonarSensor);
     
-    if(((sonar_value - sonarpre) < 0) && (locateL == 0) && (locatye == 0))
+    if(((sonar_value - sonarpre) < 0) && (locateL == 0) && (locate == 0))
     {
       locateL = 1;
       servL = motor[servoMotor];
