@@ -7,11 +7,14 @@ task main()
 {
   int speed;            // Will hold a speed for the motors.
   int sonar_value;      // Will hold the current reading of the sonar sensor.
-  int sonar2;
+  int sonarpre;
   int distance = 25;    // Specified distance to be at 25 centimeters.
   int locateL = 0;
   int locateR = 0;
   int locate = 0;
+  int servL;
+  int servR;
+  int servT;
   
   
   while(locate == 0)
@@ -23,11 +26,26 @@ task main()
    {
     motor[servoMotor] = i;
     wait1Msec(20);
-    sonar2 = sonar_value;
+    sonarpre = sonar_value;
     sonar_value = SensorValue(sonarSensor);
     
-    if(((sonar2 - sonar_value) < 0) && (locateL == 0))
-      
+    if(((sonar_value - sonarpre) < 0) && (locateL == 0) && (locatye == 0))
+    {
+      locateL = 1;
+      servL = motor[servoMotor];
+    }
+    
+    if(((sonarpre - sonar_value) <0) && (locateL == 1))
+    {
+      locateR = 1;
+      servR = motor[servoMotor];
+      locate = 1;
+    }
+    }
+    
+   servT = (servL + servR)/2; // find center of object
+    
+   // need code for the turning ratio to square robot with object then continues with the sample code when object is aquired
    
    
   
