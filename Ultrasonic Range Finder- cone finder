@@ -7,14 +7,14 @@ task main()
 {
   int speed;            // Will hold a speed for the motors.
   int sonar_value;      // Will hold the current reading of the sonar sensor.
-  int sonarpre;
+  int sonarpre;         // Records previous value for comparison
   int distance = 25;    // Specified distance to be at 25 centimeters.
-  int locateL = 0;
-  int locateR = 0;
-  int locate = 0;
-  int servL;
-  int servR;
-  int servT;
+  int locateL = 0;      // Flag for the left side of the cone
+  int locateR = 0;      // Flag for the right side of the cone
+  int locate = 0;       // Flag to break loop when left and right sides of the cone are identified
+  int servL;            // Records the servo motor value for the left side of the cone
+  int servR;            // Records the servo motor value for the right side of the cone
+  int servT;            // Finds the center of the cone
   
   
   while(locate == 0)
@@ -29,13 +29,13 @@ task main()
     sonarpre = sonar_value;
     sonar_value = SensorValue(sonarSensor);
     
-    if(((sonar_value - sonarpre) < 0) && (locateL == 0) && (locate == 0))
+    if(((sonar_value - sonarpre) > 20) && (locateL == 0) && (locate == 0))
     {
       locateL = 1;
       servL = motor[servoMotor];
     }
     
-    if(((sonarpre - sonar_value) <0) && (locateL == 1))
+    if(((sonarpre - sonar_value) > 20) && (locateL == 1))
     {
       locateR = 1;
       servR = motor[servoMotor];
