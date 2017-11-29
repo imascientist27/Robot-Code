@@ -35,7 +35,7 @@ task main()
       servL = motor[servoMotor];
     }
     
-    if(((sonarpre - sonar_value) > 20) && (locateL == 1))
+    if((((sonarpre - sonar_value) > 20) || (sonar_value == -1)) && (locateL == 1))
     {
       locateR = 1;
       servR = motor[servoMotor];
