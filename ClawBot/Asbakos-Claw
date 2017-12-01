@@ -1,5 +1,0 @@
-#pragma config(Motor,  port1,           leftMotor,     tmotorNormal, openLoop)
-#pragma config(Motor,  port10,           rightMotor,    tmotorNormal, openLoop)
-#pragma config(Motor,  port6,           clawmotor,    tmotorNormal, openLoop)
-#pragma config(Motor,  port6,           armmotor,    tmotorNormal, openLoop)
-
