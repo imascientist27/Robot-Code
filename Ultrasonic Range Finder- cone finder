@@ -2,7 +2,7 @@
 #pragma config(Sensor, dgtl8,  sonarSensor,         sensorSONAR_cm)
 #pragma config(Motor,  port2,           leftMotor,     tmotorNormal, openLoop, reversed)
 #pragma config(Motor,  port3,           rightMotor,    tmotorNormal, openLoop)
-#pragma config(Motor,  port4,           servo,    tmotorNormal, openLoop)
+#pragma config(Motor,  port4,           servoMotor,    tmotorNormal, openLoop)
 
 task main()
 {
