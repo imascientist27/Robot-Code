@@ -47,7 +47,7 @@
 
 task one()
 {
-	while(vexRT[BTn5U] == 1)
+	while(vexRT[Btn5U] == 1)
 	{
 		motor[rightMotor] = 127;
 		motor[leftMotor] = -127;
@@ -65,8 +65,8 @@ task main()
 {
 while (true)
 {
-	motor[rightMotor]  = (vexRT[Ch3] + vexRT[Ch4])/2;
-	motor[leftMotor] = (vexRT[Ch3] - vexRT[Ch4])/2;
+	motor[rightMotor]  = (vexRT[Ch3] - vexRT[Ch4])/2;
+	motor[leftMotor] = (vexRT[Ch3] + vexRT[Ch4])/2;
 	
 	if (vexRT[Btn5U] == 1)
 		startTask (one);
