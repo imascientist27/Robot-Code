@@ -61,18 +61,6 @@ task two()
 		motor[leftMotor] = 127;
 	}
 }
-task three()
-{
-	while(vexRT[Btn5U] == 1)       	//If button 5U is pressed...
-		{
-			motor[armMotor] = 127;    	//...raise the arm.
-		}
-	while(vexRT[Btn5D] == 1)  	//Else, if button 5D is pressed...
-		{
-			motor[armMotor] = -127;   	//...lower the arm.
-		}
-	}
-}
 task main()
 {
 while (true)
