@@ -5,7 +5,7 @@
 
 Task one()
 {
-  while(vexRT[BTn5U] == 1)
+  while(vexRT[Btn5U] == 1)
 	{
 		motor[rightFMotor] = 127;
     motor[rightBMotor] = 127;
@@ -16,7 +16,7 @@ Task one()
 
 Task two()
 {
-  while(vexRT[BTn6U] == 1)
+  while(vexRT[Btn6U] == 1)
 	{
 		motor[rightFMotor] = -127;
     motor[rightBMotor] = -127;
@@ -27,7 +27,7 @@ Task two()
 
 Task three()
 {
-  while(vexRT[BTn5D] == 1)
+  while(vexRT[Btn5D] == 1)
 	{
 		motor[rightFMotor] = 127;
     motor[rightBMotor] = -127;
@@ -38,7 +38,7 @@ Task three()
 
 Task four()
 {
-  while(vexRT[BTn6D] == 1)
+  while(vexRT[Btn6D] == 1)
 	{
 		motor[rightFMotor] = -127;
     motor[rightBMotor] = 127;
@@ -51,10 +51,10 @@ Task Main()
 {
 while (true)
 {
-	motor[rightFMotor]  = (vexRT[Ch3] + vexRT[Ch4])/2;
-  motor[rightBMotor]  = (vexRT[Ch3] + vexRT[Ch4])/2;
-	motor[leftFMotor] = (vexRT[Ch3] - vexRT[Ch4])/2;
-  motor[leftBMotor] = (vexRT[Ch3] - vexRT[Ch4])/2;
+	motor[rightFMotor]  = (vexRT[Ch3] - vexRT[Ch4])/2;
+  motor[rightBMotor]  = (vexRT[Ch3] - vexRT[Ch4])/2;
+	motor[leftFMotor] = (vexRT[Ch3] + vexRT[Ch4])/2;
+  motor[leftBMotor] = (vexRT[Ch3] + vexRT[Ch4])/2;
 	
 	if (vexRT[Btn5U] == 1)
 		startTask (one);
