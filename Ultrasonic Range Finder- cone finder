@@ -51,7 +51,9 @@ task main()
      if((locate  == 0) && (locateL == 0))
      {
        if(sonarpre > sonar_value)
-       rangeT = sonar_value;
+       {
+        rangeT = sonar_value;
+       }
      }
      if((((sonarpre - sonar_value) > 20) || (sonar_value == -1)) && (locateL == 1))
      {
