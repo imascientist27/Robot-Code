@@ -19,11 +19,14 @@ task main()
   
   if(vexRT[Btn5U] == 1)
     startTask (one);
+    
+  if(aquired = 1)
+    startTask (two);
  }
  
  task one()
  {
-  while(locate == 0 && (vexRT[Btn5U] == 1))
+  while(locate == 0)
   {
    motor[leftMotor] = -127;  // reset sweep to one side
    motor[rightMotor] = 127;
@@ -78,15 +81,11 @@ task main()
    
    
   
-  
+ task two()
+ {
   while(true)
   {
     sonar_value = SensorValue(sonarSensor);   // Store the current reading from the Sonar Sensor to 'sonar_value'.
-
-    clearLCDLine(0);                          /* Display the    */
-    displayLCDPos(0,0);                       /* reading of the */
-    displayNextLCDString("Sonar: ");          /* Sonar Sensor   */
-    displayNextLCDNumber(sonar_value);        /* on line 0.     */
 
     if(sonar_value < 0)                       // If the object is out of range: (returns -1)
     {
@@ -96,11 +95,6 @@ task main()
     {
       speed = (sonar_value - distance)*2;     // Move the robot at a speed proportional to how far off its desired distance it currently is
     }
-
-    clearLCDLine(1);                          /* Display the    */
-    displayLCDPos(1,0);                       /* current speed  */
-    displayNextLCDString("Speed: ");          /* of the motors  */
-    displayNextLCDNumber(speed);              /* on line 1.     */
 
     motor[leftMotor]  = speed;                /* Set both the left and right */
     motor[rightMotor] = speed;                /* motors to run at 'speed'.   */
