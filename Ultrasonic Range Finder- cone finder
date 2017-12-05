@@ -1,8 +1,7 @@
 
 #pragma config(Sensor, dgtl8,  sonarSensor,         sensorSONAR_cm)
-#pragma config(Motor,  port2,           leftMotor,     tmotorNormal, openLoop, reversed)
-#pragma config(Motor,  port3,           rightMotor,    tmotorNormal, openLoop)
-#pragma config(Motor,  port4,           servoMotor,    tmotorNormal, openLoop)
+#pragma config(Motor,  port1,           leftMotor,     tmotorNormal, openLoop, reversed)
+#pragma config(Motor,  port10,           rightMotor,    tmotorNormal, openLoop)
 
 task main()
 {
@@ -13,40 +12,69 @@ task main()
   int locateL = 0;      // Flag for the left side of the cone
   int locateR = 0;      // Flag for the right side of the cone
   int locate = 0;       // Flag to break loop when left and right sides of the cone are identified
-  int servL;            // Records the servo motor value for the left side of the cone
-  int servR;            // Records the servo motor value for the right side of the cone
-  int servT;            // Finds the center of the cone
+  int rangeL;           // Records the range for left side
+  int rangeR;           // Records the range for the right side
+  int rangeT;           // Finds the center of the cone
+  int aquired = 0;      // Flag for turning
   
-  
-  while(locate == 0)
+  if(vexRT[Btn5U] == 1)
+    startTask (one);
+ }
+ 
+ task one()
+ {
+  while(locate == 0 && (vexRT[Btn5U] == 1))
   {
-   motor[servoMotor] = -127;  // reset sweep to one side
+   motor[leftMotor] = -127;  // reset sweep to one side
+   motor[rightMotor] = 127;
    wait1Msec(500);            // give time for servo to move
+   
+   motor[leftMotor] = 0;
+   motor[rightMotor] = 0;
    
    for(int i = -127; i < 127; i+1)
    {
-    motor[servoMotor] = i;
+    motor[leftMotor] = 30;
+    motor[rightMotor] = -30;
     wait1Msec(20);
     sonarpre = sonar_value;
     sonar_value = SensorValue(sonarSensor);
     
-    if(((sonar_value - sonarpre) > 20) && (locateL == 0) && (locate == 0))
-    {
+     if(((sonar_value - sonarpre) > 20) && (locateL == 0) && (locate == 0))
+     {
       locateL = 1;
-      servL = motor[servoMotor];
-    }
-    
-    if((((sonarpre - sonar_value) > 20) || (sonar_value == -1)) && (locateL == 1))
-    {
+      rangeL = sonar_value;
+     }
+     if((locate  == 0) && (locateL == 0))
+     {
+       if(sonarpre > sonar_value)
+       rangeT = sonar_value;
+     }
+     if((((sonarpre - sonar_value) > 20) || (sonar_value == -1)) && (locateL == 1))
+     {
       locateR = 1;
-      servR = motor[servoMotor];
+      rangeR = sonar_value;
       locate = 1;
-    }
-    }
+     }
+   }
     
-   servT = (servL + servR)/2; // find center of object
-    
-   // need code for the turning ratio to square robot with object then continues with the sample code when object is aquired
+  motor[leftMotor] = 0;
+  motor[rightMotor] = 0;
+  wait1Msec(100);
+  
+    while(aquired == 0)
+    {
+      motor[leftMotor] = -30;
+      motor[rightMotor] = 30;
+  
+      sonar_value = SensorValue(sonarSensor);
+  
+       if(sonar_value == rangeT)
+        {
+          aquired == 1;
+        }
+    }
+  }
    
    
   
