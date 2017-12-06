@@ -24,7 +24,7 @@
    motor[leftMotor] = 0;
    motor[rightMotor] = 0;
    
-   for(int i = -127; i < 127; i+1)
+   for(int i = -127; i < 127; i++)
    {
     motor[leftMotor] = 30;
     motor[rightMotor] = -30;
@@ -65,7 +65,7 @@
   
        if(sonar_value == rangeT)
         {
-          aquired == 1;
+          aquired = 1;
         }
     }
   }
