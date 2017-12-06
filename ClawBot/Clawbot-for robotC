@@ -25,7 +25,7 @@ task three()
   {
     motor[arm] = 127;
   }
-  motor[arm] = 0;
+  motor[arm] = 15;
 }
 
 task four()
@@ -34,7 +34,7 @@ task four()
   {
     motor[arm] = -127;
   }
-  motor[arm] = 0;
+  motor[arm] = -15;
 }
 
 task five()
