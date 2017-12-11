@@ -30,6 +30,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Full range of motion in all functions of the clawbot
 - Mecanum wheel support
 - Test code for Ultra Sonic Range Finder
+### Removed
+- Removed TerminatorBot.rgb
+- Removed Clawbot.rgb
 
 ## 0.3.0 2017-11-29
 ### Added
