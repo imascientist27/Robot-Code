@@ -25,10 +25,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ****
 ## Released
+## 1.0.0 2017-12-11
+### Added
+- Full range of motion in all functions of the clawbot
+- Mecanum wheel support
+- Test code for Ultra Sonic Range Finder
+### Removed
+- Removed TerminatorBot.rgb
+- Removed Clawbot.rgb
 
-## 0.2.0 TBD
-- Coming Soon....
+## 0.3.0 2017-11-29
+### Added
+- The ability to control the robot manually from the vexnet system controller
 
+## 0.2.0 2017-11-22
+### Changed
+- The default clawbot code with the ability to autonomously move forward 5.5FT upon powering cycling
 
 ## 0.1.0 - 2017-11-08
 ### Added
